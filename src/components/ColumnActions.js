@@ -2,3 +2,5 @@
 function ColumnActions(){
 
 }
+
+export default ColumnActions;

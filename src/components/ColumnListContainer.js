@@ -2,3 +2,5 @@
 function ColumnListContainer(){
 
 }
+
+export default ColumnListContainer();

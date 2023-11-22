@@ -2,3 +2,5 @@
 function CardActions(){
 
 }
+
+export default CardActions;

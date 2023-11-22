@@ -1,4 +1,4 @@
-import img from './images/img.gif';
+import img from './sources/img.gif';
 
 function App() {
   return (
