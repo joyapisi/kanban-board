@@ -1,22 +1,18 @@
-import img from './sources/img.gif';
+import CardItem from './components/CardItem';
+import CardsList from './components/CardsList';
+import ColumnWrapper from './components/ColumnWrapper';
+import ColumnContainer from './components/ColumnContainer'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={img} className="App-img" alt="img" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1 className="main-heading">
+        KanBan App
+      </h1>
+      <CardItem />
+      <CardsList />
+      <ColumnContainer />
+      <ColumnWrapper />
     </div>
   );
 }
