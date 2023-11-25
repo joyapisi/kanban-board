@@ -16,10 +16,85 @@ import {
 //use redux reducer to set up and define state
   const kanbanReducer = (state = initialState, action) => {
     switch (action.type) {
-      // I will handle all the actions here
-      default:
-        return state;
-    }
-  };
-  
-  export default kanbanReducer;
+      // I will handle all the action cases here
+      case ADD_COLUMN:
+      // default:
+        return {
+          ...state,
+          columns: [...state.columns, action.payload],
+        };
+
+        case EDIT_COLUMN:
+          // handle editing a column
+          return {
+            ...state,
+            columns: state.columns.map((column) =>
+              column.id === action.payload.myColumnId
+                ? { ...column, name: action.payload.newColumn }
+                : column
+            ),
+          };
+    
+        case DELETE_COLUMN:
+          // handle deleting a column
+          return {
+            ...state,
+            columns: state.columns.filter(
+              (column) => column.id !== action.payload.myColumnId
+            ),
+          };
+    
+        case ADD_CARD:
+          // handle adding a new card to a column
+          return {
+            ...state,
+            columns: state.columns.map((column) =>
+              column.id === action.payload.mycolumnId
+                ? {
+                    ...column,
+                    cards: [...column.cards, { id: generateUniqueId(), task: action.payload.task }],
+                  }
+                : column
+            ),
+          };
+    
+        case EDIT_CARD:
+          // handle editing a card in a column
+          return {
+            ...state,
+            columns: state.columns.map((column) =>
+              column.id === action.payload.columnId
+                ? {
+                    ...column,
+                    cards: column.cards.map((card) =>
+                      card.id === action.payload.taskId
+                        ? { ...card, task: action.payload.newTask }
+                        : card
+                    ),
+                  }
+                : column
+            ),
+          };
+    
+        case DELETE_CARD:
+          // handle deleting a card from a column
+          return {
+            ...state,
+            columns: state.columns.map((column) =>
+              column.id === action.payload.columnId
+                ? {
+                    ...column,
+                    cards: column.cards.filter(
+                      (card) => card.id !== action.payload.taskID
+                    ),
+                  }
+                : column
+            ),
+          };
+        }
+        
+    };
+    
+    // helper function to generate a unique ID for a new card
+    
+    export default kanbanReducer;
