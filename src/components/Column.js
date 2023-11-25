@@ -10,7 +10,9 @@ function Column({column}){
               ref={provided.innerRef}
               className="card-container"
             >
-              
+              {column.cards.map((card, index) => (
+                <Card key={card.id} card={card} index={index} />
+              ))}
               {provided.placeholder}
             </div>
           )}
