@@ -91,10 +91,24 @@ import {
                 : column
             ),
           };
-        }
-        
-    };
     
-    // helper function to generate a unique ID for a new card
+        case MOVE_CARD:
+          // handle moving a card between columns
+          const { sourceColumnId, destinationColumnId, draggableId, sourceIndex, destinationIndex } = action.payload;
+          const updatedColumns = [...state.columns];
+          const sourceColumn = updatedColumns.find((column) => column.id === sourceColumnId);
+          const destinationColumn = updatedColumns.find((column) => column.id === destinationColumnId);
+          const [movedCard] = sourceColumn.cards.splice(sourceIndex, 1);
+          destinationColumn.cards.splice(destinationIndex, 0, movedCard);
+    
+          return {
+            ...state,
+            columns: updatedColumns,
+          };
+    
+        default:
+          return state;
+      }
+    };
     
     export default kanbanReducer;
