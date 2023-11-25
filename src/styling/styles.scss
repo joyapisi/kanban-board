@@ -13,7 +13,22 @@
   }
 
 //Columns
-
+.column-container {
+    background-color: #504a4a;
+    padding: 5px;
+    margin: 40px;
+    border-radius: 5px;
+  
+    .column-title {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+  
+    .card-list {
+      list-style: none;
+      padding: 0;
+    }
+  }
   
 //Cards
 .card-container {
