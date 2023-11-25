@@ -1,11 +1,20 @@
 // App.scss
 @import "~bootstrap/scss/bootstrap";
 
-// Your custom styles go here
+// KanBan Board
+.kanban-board {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+  }
+  
+  .add-column-button {
+    margin-top: 20px;
+  }
 
 //Columns
 
-
+  
 //Cards
 .card-container {
     margin-bottom: 10px;
