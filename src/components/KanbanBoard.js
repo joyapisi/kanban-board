@@ -1,26 +1,23 @@
-// Board.js
 import React from "react";
-import { connect } from "react-redux";
-import { addColumn } from "./actions"
+import { DragDropContext } from "react-beautiful-dnd";
 import Column from "./Column";
+import { Button } from "react-bootstrap";
+import { addColumn, moveCard } from "../redux/actions";
 
-function KanBanBoard({ columns, addColumn }) {
+export default function kanbanBoard(){
   return (
-    <div>
-      {/* Handle the event of clicking add button */}
-      <button onClick={() => addColumn("New Column")}>+</button>
-      {/* map each column in the column array */}
-      {columns.map((column) => (
-        <Column key={column.id} column={column} />
-      ))}
-    </div>
+    <DragDropContext onDragEnd={handleDragEnd}>
+      <div className="kanban-board">
+        {columns.map((column) => (
+          <Column key={column.id} column={column} />
+        ))}
+        {columns.length < 5 && (
+          <Button variant="success" onClick={() => dispatch(addColumn("New Column"))}>
+            Add Column
+          </Button>
+        )}
+      </div>
+    </DragDropContext>
   );
-}
+};
 
-const mapStateToProps = (state) => ({
-  columns: state.columns,
-});
-
-const mapDispatchToProps = { addColumn };
-
-export default connect(mapStateToProps, mapDispatchToProps)(KanBanBoard);
