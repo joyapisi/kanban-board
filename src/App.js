@@ -1,21 +1,28 @@
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle.min";
-import CardItem from './components/CardItem';
-import CardsList from './components/CardsList';
-import ColumnWrapper from './components/ColumnWrapper';
-import ColumnContainer from './components/ColumnContainer'
+import React from "react";
+import { Provider } from "react-redux";
+import store from "./redux/store";
+import "./styling/styles.scss"; // Make sure the file name is correct
+import KanbanBoard from './components/KanbanBoard';
+import Column from './components/Column';
+import Card from './components/Card';
+import CardInputForm from './components/CardInputForm';
 
 function App() {
   return (
-    <div className="m-4">
-      <h1 className="main-heading">
-        KanBan App
-      </h1>
-      <ColumnWrapper />
-      <ColumnContainer />
-      <CardsList />
-      <CardItem />      
-    </div>
+    <Provider store={store}>
+      <div className="kanban-board">
+        <h1 className="main-heading">
+          KanBan App
+        </h1>
+        <KanbanBoard>
+          <Column>
+            <Card>
+              <CardInputForm />
+            </Card>
+          </Column>
+        </KanbanBoard>
+      </div>
+    </Provider>
   );
 }
 
