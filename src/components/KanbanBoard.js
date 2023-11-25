@@ -4,6 +4,7 @@ import Column from "./Column";
 import { Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { addColumn, moveCard } from "../redux/actions";
+import "../styling/styles.scss"
 
 export default function kanbanBoard(){
   const dispatch = useDispatch();
