@@ -6,6 +6,7 @@ import {
     DELETE_CARD,
     EDIT_COLUMN,
     EDIT_CARD,
+    MOVE_CARD,
   } from "../components/actions/Actions.js";
 
 //set up initial state of column  as an empty array
