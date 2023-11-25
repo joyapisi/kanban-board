@@ -1,15 +1,10 @@
-import { configureStore } from '@reduxjs/toolkit';
-import rootReducer from '../reducers';
-import thunk from 'redux-thunk';
+//import the kanban reducer and configure store
+import { configureStore } from "@reduxjs/toolkit";
+import kanbanReducer from "./KanbanSlice";
 
-//manage state using reducers
+//I amm setting up my store here
 const store = configureStore({
-    reducer: {
-        cards: cardsListReducer,
-      },
-//   reducer: rootReducer,
-//   middleware: [thunk],
+  reducer: kanbanReducer,
 });
 
-//export store and persistoer seperately
 export default store;
