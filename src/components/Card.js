@@ -1,9 +1,16 @@
 import React from "react";
+import { Draggable } from "react-beautiful-dnd";
 import { Card as BootstrapCard } from "react-bootstrap";
 
-export default function Card({ card }){
+const Card = ({ card, index }) => {
   return (
-        <div>
+    <Draggable draggableId={card.id} index={index}>
+      {(provided) => (
+        <div
+          {...provided.draggableProps}
+          {...provided.dragHandleProps}
+          ref={provided.innerRef}
+        >
           <BootstrapCard>
             <BootstrapCard.Body>
               <BootstrapCard.Title>{card.title}</BootstrapCard.Title>
@@ -12,6 +19,8 @@ export default function Card({ card }){
           </BootstrapCard>
         </div>
       )}
-  
+    </Draggable>
   );
 };
+
+export default Card;
