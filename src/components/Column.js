@@ -1,4 +1,7 @@
 //This component will hold all components and the icon which adds a column
+import { Droppable } from 'react-beautiful-dnd';
+import Card from './Card';
+
 export default function Column({column}){
     return(
         <div className="column">
