@@ -6,7 +6,7 @@ import {
     DELETE_CARD,
     EDIT_COLUMN,
     EDIT_CARD,
-  } from "../components/actions";
+  } from "../components/actions/Actions.js";
 
 //set up initial state of column  as an empty array
   const initialState = {
@@ -109,6 +109,11 @@ import {
         default:
           return state;
       }
+    };
+    
+    // helper function to generate a unique ID for a new card
+    const generateUniqueId = () => {
+      return '_' + Math.random().toString(36).substr(2, 9);
     };
     
     export default kanbanReducer;
