@@ -8,18 +8,14 @@ export default function Column({column}){
         <h3>{column.title}</h3>
         <Droppable droppableId={column.id}>
           {(provided) => (
-            <div
-              {...provided.droppableProps}
-              ref={provided.innerRef}
-              className="card-container"
-            >
-              {column.cards.map((card, index) => (
-                <Card key={card.id} card={card} index={index} />
-              ))}
-              {provided.placeholder}
-            </div>
-          )}
-        </Droppable>
+          <div ref={provided.innerRef} {...provided.droppableProps}>
+            {column.cards && column.cards.map((card, index) => (
+              <Card key={card.id} card={card} index={index} />
+            ))}
+            {provided.placeholder}
+          </div>
+        )}
+      </Droppable>
       </div> 
    )
 }
