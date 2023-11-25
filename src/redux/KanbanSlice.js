@@ -6,7 +6,7 @@ import {
     DELETE_CARD,
     EDIT_COLUMN,
     EDIT_CARD,
-  } from "../components/Actions";
+  } from "../components/actions";
 
 //set up initial state of column  as an empty array
   const initialState = {
