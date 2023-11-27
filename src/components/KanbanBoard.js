@@ -1,7 +1,7 @@
 import React from "react";
 import { DragDropContext } from "react-beautiful-dnd";
 import Column from "./Column";
-import { Button } from "react-bootstrap";
+import Button from '@mui/material/Button';
 import { useDispatch, useSelector } from "react-redux";
 import { addColumn, moveCard } from "./actions/Actions.js";
 import "../styling/styles.scss"
@@ -37,8 +37,8 @@ export default function KanbanBoard(){
         {/* My user should only see 5 columns then add button disappears */}
         {columns.length < 5 && (
           // Using bootstrap button here and onClick for what happens when mouse clicked by user
-          <Button variant="success" onClick={() => dispatch(addColumn("New Column"))}>
-            +
+          <Button variant="outlined" onClick={() => dispatch(addColumn("New Column"))}>
+          Add Column
           </Button>
         )}
       </div>
