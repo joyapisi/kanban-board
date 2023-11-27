@@ -1,25 +1,45 @@
 // I will import the constants for actions here
 import {
     ADD_COLUMN,
-    ADD_CARD,
-    DELETE_COLUMN,
-    DELETE_CARD,
     EDIT_COLUMN,
+    DELETE_COLUMN,
+    ADD_CARD,
     EDIT_CARD,
+    DELETE_CARD,
     MOVE_CARD,
   } from "../components/actions/Actions.js";
 
+//bring a helper function here
+const generateUniqueId = () => {
+  return '_' + Math.random().toString(36).substr(2, 9);
+};
+  
 //set up initial state of column  as an empty array
-  const initialState = {
-    columns: [],
-  };
-
+const initialState = {
+  columns: [
+    {
+      id: generateUniqueId(),
+      title: "",
+      cards: [
+        {
+          id: generateUniqueId(),
+          title: "",
+          description: "",
+        },
+      ],
+    },
+  ],
+};
+  
 //use redux reducer to set up and define state
   const kanbanReducer = (state = initialState, action) => {
+    if (process.env.NODE_ENV !== 'production') {
+      console.log(action.type);
+    }
+    
     switch (action.type) {
       // I will handle all the action cases here
       case ADD_COLUMN:
-      // default:
         return {
           ...state,
           columns: [...state.columns, action.payload],
@@ -31,7 +51,7 @@ import {
             ...state,
             columns: state.columns.map((column) =>
               column.id === action.payload.myColumnId
-                ? { ...column, name: action.payload.newColumn }
+                ? { ...column, title: action.payload.newColumn }
                 : column
             ),
           };
@@ -50,7 +70,7 @@ import {
           return {
             ...state,
             columns: state.columns.map((column) =>
-              column.id === action.payload.mycolumnId
+              column.id === action.payload.columnId
                 ? {
                     ...column,
                     cards: [...column.cards, { id: generateUniqueId(), task: action.payload.task }],
@@ -111,10 +131,5 @@ import {
           return state;
       }
     };
-    
-    // helper function to generate a unique ID for a new card
-    const generateUniqueId = () => {
-      return '_' + Math.random().toString(36).substr(2, 9);
-    };
-    
+
     export default kanbanReducer;
