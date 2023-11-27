@@ -1,9 +1,10 @@
 import React from "react";
 import { Draggable } from "react-beautiful-dnd";
-import { Card as BootstrapCard } from "react-bootstrap";
-// import "./styling/styles.scss"; 
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import Typography from '@mui/material/Typography';
 
-export default function Card({ card, index }){
+export default function DraggableCard({ card, index }) {
   return (
     <Draggable draggableId={card.id} index={index}>
       {(provided) => (
@@ -11,17 +12,20 @@ export default function Card({ card, index }){
           {...provided.draggableProps}
           {...provided.dragHandleProps}
           ref={provided.innerRef}
-          className="card-container" 
+          className="card-container"
         >
-          <BootstrapCard className="card-body">
-            <BootstrapCard.Body>
-              <BootstrapCard.Title>{card.title}</BootstrapCard.Title>
-              <BootstrapCard.Text>{card.description}</BootstrapCard.Text>
-            </BootstrapCard.Body>
-          </BootstrapCard>
+          <Card variant="outlined" className="card-body">
+            <CardContent>
+              <Typography variant="h5" component="div">
+                {card.title}
+              </Typography>
+              <Typography variant="body2">
+                {card.description}
+              </Typography>
+            </CardContent>
+          </Card>
         </div>
       )}
     </Draggable>
   );
-};
-
+}
