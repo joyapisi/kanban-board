@@ -1,23 +1,28 @@
-import img from './images/img.gif';
+import React from "react";
+import { Provider } from "react-redux";
+import store from "./redux/store";
+import "./styling/styles.scss"; // Make sure the file name is correct
+import KanbanBoard from './components/KanbanBoard';
+import Column from './components/Column';
+import Card from './components/Card';
+import CardInputForm from './components/CardInputForm';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={img} className="App-img" alt="img" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <div className="main-board">
+        <h1 className="main-heading">
+          KanBan App
+        </h1>
+        <KanbanBoard>
+          <Column>
+            <Card>
+              <CardInputForm />
+            </Card>
+          </Column>
+        </KanbanBoard>
+      </div>
+    </Provider>
   );
 }
 
