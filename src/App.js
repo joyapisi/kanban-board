@@ -10,7 +10,7 @@ import CardInputForm from './components/CardInputForm';
 function App() {
   return (
     <Provider store={store}>
-      <div className="kanban-board">
+      <div className="main-board">
         <h1 className="main-heading">
           KanBan App
         </h1>

@@ -1,11 +1,45 @@
 // App.scss
 @import "~bootstrap/scss/bootstrap";
 
+$black: #1b1b1b;
+$white: #fff;
+$light-gray: rgb(161, 161, 161)f8f;
+$dark-gray: rgb(92, 92, 92)f8f;
+
+* {
+  // background: $black;
+  color: $black;
+  // padding: 30px;
+  // margin: 10px;
+}
+
+body {
+  // padding: 10px;
+  // margin: 20px;
+}
+
+//main oard
+.main-board {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: $light-gray;
+  gap: 30px;
+  padding: 30px; 
+}
+
+.main-heading {
+  align-self: center;
+  margin-bottom: 2px solid #fff;
+  // text-decoration: underline;
+}
+
 // KanBan Board
 .kanban-board {
     display: flex;
-    justify-content: space-around;
-    padding: 20px;
+    align-items: flex-start;   
+    width: 100vh;
+    height: 100vh; 
   }
   
   .add-column-button {
@@ -13,15 +47,23 @@
   }
 
 //Columns
+.column {
+  background-color: $light-gray;
+  display: flex;
+  align-items: left;
+  flex-direction: column;
+  padding: 5px;
+}
+
 .column-container {
-    background-color: #504a4a;
-    padding: 5px;
-    margin: 40px;
-    border-radius: 5px;
-  
+    background-color: $light-gray;
+    padding: 10px;
+    // margin: 40px;
+    border-radius: 15px;
+    
     .column-title {
       font-size: 18px;
-      margin-bottom: 10px;
+      margin-bottom: 10px solid $light-gray;
     }
   
     .card-list {
@@ -32,7 +74,8 @@
   
 //Cards
 .card-container {
-    margin-bottom: 10px;
+    // margin-bottom: 10px;
+    // background-color: aqua;
   
     .card-body {
       padding: 10px;
