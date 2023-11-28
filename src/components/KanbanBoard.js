@@ -48,7 +48,11 @@ export default function KanbanBoard(){
           Add Column
           </Button>
         )}
-        
+        <AddColumnModal
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+          onAddColumn={handleAddColumn}
+        />
       </div>
     </DragDropContext>
   );
