@@ -16,19 +16,7 @@ const generateUniqueId = () => {
   
 //set up initial state of column  as an empty array
 const initialState = {
-  columns: [
-    {
-      id: generateUniqueId(),
-      title: "",
-      cards: [
-        {
-          id: generateUniqueId(),
-          title: "",
-          description: "",
-        },
-      ],
-    },
-  ],
+  columns: [],
 };
   
 //use redux reducer to set up and define state
