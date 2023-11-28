@@ -5,12 +5,14 @@ import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 
 const AddCardModal = ({ isOpen, onClose, onAddCard }) => {
-  const [cardName, setCardName] = useState('');
+  const [cardTitle, setCardTitle] = useState('');
 
   const handleAddCard = () => {
-    onAddCard(cardName);
-    setCardName('');
-    onClose();
+    if (cardTitle.trim() !== '') {
+        onAddCard(cardName);
+        setCardName('');
+        onClose();
+    }
   };
 
   return (
