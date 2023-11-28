@@ -4,7 +4,7 @@ import Column from "./Column";
 import Button from '@mui/material/Button';
 import { useDispatch, useSelector } from "react-redux";
 import { addColumn, moveCard } from "./actions/Actions.js"
-import AddColumnModal from "./Modal.js";
+import AddColumnModal from "./modals/AddColumnModal.js";
 import "../styling/styles.scss"
 
 export default function KanbanBoard(){
@@ -48,6 +48,7 @@ export default function KanbanBoard(){
           Add Column
           </Button>
         )}
+        {/* Control opening and closing of modal when column is being added */}
         <AddColumnModal
           isOpen={isModalOpen}
           onClose={() => setIsModalOpen(false)}
