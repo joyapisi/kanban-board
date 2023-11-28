@@ -9,8 +9,8 @@ const AddCardModal = ({ isOpen, onClose, onAddCard }) => {
 
   const handleAddCard = () => {
     if (cardTitle.trim() !== '') {
-        onAddCard(cardName);
-        setCardName('');
+        onAddCard(cardTitle);
+        setCardTitle('');
         onClose();
     }
   };
@@ -30,11 +30,11 @@ const AddCardModal = ({ isOpen, onClose, onAddCard }) => {
         }}
       >
         <TextField
-          label="Card Name"
+          label="Card Title"
           variant="outlined"
           fullWidth
-          value={cardName}
-          onChange={(e) => setCardName(e.target.value)}
+          value={cardTitle}
+          onChange={(e) => setCardTitle(e.target.value)}
         />
         <Box sx={{ mt: 2, display: 'flex', justifyContent: 'space-between' }}>
           <Button variant="contained" onClick={onClose}>
