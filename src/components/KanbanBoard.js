@@ -45,7 +45,7 @@ export default function KanbanBoard(){
         {columns.length < 5 && (
           // Using bootstrap button here and onClick for what happens when mouse clicked by user
           <Button variant="outlined" onClick={() => setIsModalOpen(true)}>
-          Add Column
+            Add Column
           </Button>
         )}
         {/* Control opening and closing of modal when column is being added */}

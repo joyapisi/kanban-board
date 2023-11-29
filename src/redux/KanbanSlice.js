@@ -16,7 +16,19 @@ const generateUniqueId = () => {
   
 //set up initial state of column  as an empty array
 const initialState = {
-  columns: [],
+  columns: [
+    {
+      id: generateUniqueId(),
+      title: "",
+      cards: [
+        {
+          id: generateUniqueId(),
+          title: "",
+          description: "",
+        },
+      ],
+    },
+  ],
 };
   
 //use redux reducer to set up and define state
@@ -55,17 +67,20 @@ const initialState = {
     
         case ADD_CARD:
           // handle adding a new card to a column
+          console.log(state);
           return {
             ...state,
             columns: state.columns.map((column) =>
               column.id === action.payload.columnId
                 ? {
                     ...column,
-                    cards: [...column.cards, { id: generateUniqueId(), task: action.payload.task }],
-                  }
-                : column
-            ),
-          };
+                    cards: Array.isArray(column.cards) // Checking if cards is an array
+              ? [...column.cards, { id: generateUniqueId(), task: action.payload.task }]
+              : [{ id: generateUniqueId(), task: action.payload.task }], // If not, initialize as an array
+          }
+        : column
+    ),
+  };
     
         case EDIT_CARD:
           // handle editing a card in a column
