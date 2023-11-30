@@ -23,7 +23,7 @@ export default function Column({ column }) {
   return (
     <div className="column">
       <h3>{column.title}</h3>
-      <Droppable droppableId={column.id}>
+      <Droppable droppableId={column.id} key={column.id}>
         {(provided) => (
           <div 
           className='column-details'
