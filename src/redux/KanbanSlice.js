@@ -30,12 +30,14 @@ const initialState = {
       case ADD_COLUMN:
         return {
           ...state,
-          columns: [...state.columns, 
+          columns: [...state.columns,
           {
             id: generateUniqueId(),
-            title: "",
+            title: action.payload.title,
             cards: [],
-          }],
+          }
+          // action.payload 
+        ],
         };
 
         case EDIT_COLUMN:
