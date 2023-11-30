@@ -14,13 +14,7 @@ function App() {
         <h1 className="main-heading">
           KanBan App
         </h1>
-        <KanbanBoard>
-          <Column>
-            <Card>
-              <CardInputForm />
-            </Card>
-          </Column>
-        </KanbanBoard>
+        <KanbanBoard />
       </div>
     </Provider>
   );
