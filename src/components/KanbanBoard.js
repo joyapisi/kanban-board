@@ -31,16 +31,19 @@ export default function KanbanBoard(){
 
   const handleAddColumn = (columnName) => {
     dispatch(addColumn(columnName));
+    setIsModalOpen(false);
   };
   
   return (
     // Using react beautiful dnd for drag n drop
     <DragDropContext onDragEnd={handleDragEnd}>
       <div className="kanban-board">
-        {/* Iterate through my array of columns */}
-        {columns.map((column) => (
-          <Column key={column.id} column={column} />
-        ))}
+        {/* Only render columns if there are more than zer0 */}
+        {columns.length > 0 &&
+          columns.map((column) => (
+            <Column key={column.id} column={column} />
+          ))}
+       
         {/* My user should only see 5 columns then add button disappears */}
         {columns.length < 5 && (
           // Using bootstrap button here and onClick for what happens when mouse clicked by user
