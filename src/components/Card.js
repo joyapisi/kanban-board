@@ -5,7 +5,7 @@ import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 
 export default function DraggableCard({ card, index }) {
-  return (
+  return (  
     <Draggable draggableId={card.id} index={index}>
       {(provided) => (
         <div
@@ -17,7 +17,7 @@ export default function DraggableCard({ card, index }) {
           <Card variant="outlined" className="card-body">
             <CardContent>
               <Typography variant="h5" component="div">
-                {card.title}
+                {card.task}
               </Typography>
               <Typography variant="body2">
                 {card.description}
