@@ -87,19 +87,24 @@ body {
       margin-bottom: 10px solid $light-gray;
     }
   
-    .card-list {
-      list-style: none;
-      padding: 0;
-    }
+    // .card-list {
+    //   list-style: none;
+    //   padding: 0;
+    // }
   }
   
 //Cards
+.card {
+  padding-bottom: 5px;
+}
+
 .card-container {
     // margin-bottom: 10px;
     // background-color: aqua;
   
     .card-body {
       padding: 10px;
+      margin: 15px 5px;
     }
   }
   
