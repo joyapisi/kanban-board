@@ -26,9 +26,9 @@ export const deleteColumn = (myColumnId, task) => ({
 
 //specify what the CARD actions will do 
 
-export const addCard = (mycolumnId, task) => ({
+export const addCard = (columnId, task) => ({
   type: ADD_CARD,
-  payload: { mycolumnId, task },
+  payload: { columnId, task },
 });
 
 export const editCard = (columnId, taskId, newTask) => ({
