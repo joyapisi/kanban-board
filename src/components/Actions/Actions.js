@@ -2,6 +2,7 @@
 export const ADD_COLUMN = "ADD_COLUMN";
 export const EDIT_COLUMN = "EDIT_COLUMN";
 export const DELETE_COLUMN = "DELETE_COLUMN";
+export const RENAME_COLUMN = "RENAME_COLUMNN";
 
 //actions for card
 export const ADD_CARD = "ADD_CARD";
@@ -22,6 +23,12 @@ export const editColumn = (myColumnId, newColumn) => ({
 export const deleteColumn = (myColumnId, task) => ({
     type: DELETE_COLUMN,
     payload: { myColumnId, task },
+  });
+
+
+  export const renameColumn = (ColumnId, newTitle) => ({
+    type: RENAME_COLUMN,
+    payload: { ColumnId, newTitle },
   });
 
 //specify what the CARD actions will do 
