@@ -3,11 +3,14 @@ import {
     ADD_COLUMN,
     EDIT_COLUMN,
     DELETE_COLUMN,
+    RENAME_COLUMN,
     ADD_CARD,
     EDIT_CARD,
     DELETE_CARD,
     MOVE_CARD,
   } from "../components/actions/Actions.js";
+
+  export const RENAME_COLUMN = "RENAME_COLUMN";
 
 //bring a helper function here
 const generateUniqueId = () => {
@@ -62,6 +65,17 @@ const initialState = {
             ),
           };
     
+
+          case RENAME_COLUMN:
+          return {
+            ...state,
+            columns: state.columns.map((column) =>
+              column.id === action.payload.columnId
+                ? { ...column, title: action.payload.newTitle }
+                : column
+            ),
+          };
+
           case ADD_CARD:
             console.log("Adding card to column:", action.payload.columnId);
             console.log("Current state:", state);
