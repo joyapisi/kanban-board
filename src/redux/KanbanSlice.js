@@ -10,7 +10,7 @@ import {
     MOVE_CARD,
   } from "../components/actions/Actions.js";
 
-  export const RENAME_COLUMN = "RENAME_COLUMN";
+  // export const RENAME_COLUMN = "RENAME_COLUMN";
 
 //bring a helper function here
 const generateUniqueId = () => {
