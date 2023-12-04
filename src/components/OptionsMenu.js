@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import IconButton from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
-import MoreVertIcon from '@mui/icons-material/MoreVert' 
+import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 
 export default function OptionsMenu({ onRename, onClear, onDelete }) {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -25,7 +25,7 @@ export default function OptionsMenu({ onRename, onClear, onDelete }) {
         aria-expanded={open ? 'true' : undefined}
         onClick={handleClick}
       >
-        <MoreVertIcon />
+        <MoreHorizIcon />
       </IconButton>
       <Menu
         id="options-menu"
