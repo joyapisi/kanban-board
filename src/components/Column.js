@@ -6,8 +6,9 @@ import AddCardModal from './modals/AddCardModal';
 import { useState } from 'react';
 import { addCard } from './actions/Actions';
 import { useDispatch } from 'react-redux';
+import { optionsMenu } from './Options'; 
 
-export default function Column({ column }) {
+  export default function Column({ column }) {
   const dispatch = useDispatch();  
   
   //set the state of the modal popup
