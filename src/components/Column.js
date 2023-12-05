@@ -4,26 +4,62 @@ import Card from './Card';
 import Button from '@mui/material/Button';
 import AddCardModal from './modals/AddCardModal';
 import { useState } from 'react';
-import { addCard } from './actions/Actions';
+import { addCard, clearColumn, deleteColumn, renameColumn } from './actions/Actions';
 import { useDispatch } from 'react-redux';
-import { optionsMenu } from './Options'; 
+import OptionsMenu from './OptionsMenu'; 
 
-  export default function Column({ column }) {
+export default function Column({ column }) {
   const dispatch = useDispatch();  
   
   //set the state of the modal popup
   const [isAddCardModalOpen, setAddCardModalOpen] = useState(false);
-  
+  const [isRenameModalOpen, setRenameModalOpen] = useState(false);
+  const [newColumnName, setNewColumnName] = useState("");
+
   //handle card addition within the column
   const handleAddCard = (cardTitle) => {
     dispatch(addCard(column.id, cardTitle));
     setAddCardModalOpen(false);
-    // console.log(`Adding card: ${cardTitle}`);
+  };
+
+  const handleRename = () => {
+    setRenameModalOpen(true);
+  };
+
+  const handleRenameColumn = () => {
+    dispatch(renameColumn(column.id, newColumnName));
+    setRenameModalOpen(false);
+  };
+
+  const handleClear = () => {
+    dispatch(clearColumn(column.id));
+  };
+
+  const handleDelete = () => {
+    dispatch(deleteColumn(column.id));
   };
 
   return (
     <div className="column">
-      <h3>{column.title}</h3>
+       <div className="column-header">
+        <h3>{column.title}</h3>
+        <OptionsMenu handleRename={handleRename} handleClear={handleClear} handleDelete={handleDelete}/>
+      </div>
+
+      {isRenameModalOpen && (
+        <div className="rename-modal">
+          <input
+            type="text"
+            placeholder="Enter new column name"
+            onChange={(e) => setNewColumnName(e.target.value)}
+          />
+          <Button onClick={() => handleRenameColumn(newColumnName)}>
+            Rename Column
+          </Button>
+          <Button onClick={() => setRenameModalOpen(false)}>Cancel</Button>
+        </div>
+      )}
+
       <Droppable droppableId={column.id} key={column.id}>
         {(provided) => (
           <div 
@@ -38,7 +74,12 @@ import { optionsMenu } from './Options';
       </Droppable>
 
       {/* Button that will trigger the opening of the Add Card modal */}
-      <Button onClick={() => setAddCardModalOpen(true)}>Add Card</Button>
+      <div className='add-card-btn'>
+        <Button 
+          onClick={() => setAddCardModalOpen(true)}>
+            Add Card
+        </Button>
+      </div>
 
       {/* Control opening and closing of modal when card is being added */}
       <AddCardModal
