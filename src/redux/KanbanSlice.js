@@ -1,12 +1,10 @@
 // I will import the constants for actions here
 import {
     ADD_COLUMN,
-    EDIT_COLUMN,
+    CLEAR_COLUMN,
     DELETE_COLUMN,
     RENAME_COLUMN,
     ADD_CARD,
-    EDIT_CARD,
-    DELETE_CARD,
     MOVE_CARD,
   } from "../components/actions/Actions.js";
 
@@ -45,35 +43,32 @@ const initialState = {
         ],
         };
 
-        case EDIT_COLUMN:
-          // handle editing a column
+        case CLEAR_COLUMN:
+          // Handle clearing a column (removing all cards)
           return {
             ...state,
             columns: state.columns.map((column) =>
-              column.id === action.payload.myColumnId
-                ? { ...column, title: action.payload.newColumn }
-                : column
+              column.id === action.payload.columnId ? { ...column, cards: [] } : column
             ),
           };
     
-        case DELETE_COLUMN:
-          // handle deleting a column
-          return {
-            ...state,
-            columns: state.columns.filter(
-              (column) => column.id !== action.payload.myColumnId
-            ),
+          case DELETE_COLUMN:
+            // Handle deleting a column
+            return {
+              ...state,
+              columns: state.columns.filter((column) => column.id !== action.payload.myColumnId),
           };
     
 
           case RENAME_COLUMN:
-          return {
-            ...state,
-            columns: state.columns.map((column) =>
-              column.id === action.payload.columnId
-                ? { ...column, title: action.payload.newTitle }
-                : column
-            ),
+            // Handle renaming a column
+            return {
+              ...state,
+              columns: state.columns.map((column) =>
+                column.id === action.payload.ColumnId
+                  ? { ...column, title: action.payload.newTitle }
+                  : column
+              ),
           };
 
           case ADD_CARD:
@@ -92,40 +87,6 @@ const initialState = {
                   : column
               ),
             };                    
-    
-        case EDIT_CARD:
-          // handle editing a card in a column
-          return {
-            ...state,
-            columns: state.columns.map((column) =>
-              column.id === action.payload.columnId
-                ? {
-                    ...column,
-                    cards: column.cards.map((card) =>
-                      card.id === action.payload.taskId
-                        ? { ...card, task: action.payload.newTask }
-                        : card
-                    ),
-                  }
-                : column
-            ),
-          };
-    
-        case DELETE_CARD:
-          // handle deleting a card from a column
-          return {
-            ...state,
-            columns: state.columns.map((column) =>
-              column.id === action.payload.columnId
-                ? {
-                    ...column,
-                    cards: column.cards.filter(
-                      (card) => card.id !== action.payload.taskID
-                    ),
-                  }
-                : column
-            ),
-          };
     
         case MOVE_CARD:
           // handle moving a card between columns
