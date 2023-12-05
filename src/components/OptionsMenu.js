@@ -4,7 +4,7 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 
-export default function OptionsMenu({ onRename, onClear, onDelete }) {
+export default function OptionsMenu({ handleRename, handleClear, handleDelete }) {
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
 
@@ -33,9 +33,9 @@ export default function OptionsMenu({ onRename, onClear, onDelete }) {
         open={open}
         onClose={handleClose}
       >
-        <MenuItem onClick={() => { handleClose(); onRename(); }}>Rename</MenuItem>
-        <MenuItem onClick={() => { handleClose(); onClear(); }}>Clear</MenuItem>
-        <MenuItem onClick={() => { handleClose(); onDelete(); }}>Delete</MenuItem>
+        <MenuItem id="menu-item" onClick={() => { handleClose(); handleRename(); }}>Rename</MenuItem>
+        <MenuItem id="menu-item" onClick={() => { handleClose(); handleClear(); }}>Clear</MenuItem>
+        <MenuItem id="menu-item" onClick={() => { handleClose(); handleDelete(); }}>Delete</MenuItem>
       </Menu>
     </div>
   );
