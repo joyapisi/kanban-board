@@ -3,22 +3,16 @@
 
 $black: #1b1b1b;
 $white: #fff;
-$light-gray: rgb(161, 161, 161)f8f;
-$dark-gray: rgb(92, 92, 92)f8f;
+$light-gray: #cdcfcf;
+$dark-gray: rgb(41, 41, 41);
 
 * {
-  // background: $black;
   color: $black;
-  // padding: 30px;
-  // margin: 10px;
 }
 
 body {
-  // padding: 10px;
-  // margin: 20px;
   // background-color: #1b2845;
-  // background-image: linear-gradient(315deg, #1b2845 0%, #274060 74%);
-
+  // background-image: linear-gradient(95deg, #040404 0%, #274060 74%);
 }
 
 //main board
@@ -26,15 +20,12 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  background-color: $light-gray;
   gap: 30px;
   padding: 30px; 
 }
 
 .main-heading {
   align-self: center;
-  margin-bottom: 2px solid #fff;
-  // text-decoration: underline;
 }
 
 // KanBan Board
@@ -52,11 +43,7 @@ body {
 
 //Columns
 .column {
-  // background-color: $light-gray;
-  // display: flex;
   text-align: center;
-  // flex-direction: column;
-  // padding: 5px;
   border: 1px solid #cccccc;
   padding: 10px 5px;
   width: 100%;
@@ -64,14 +51,24 @@ body {
   flex: 1;
   margin: 8px;
   gap: 5px;
+  // background-color: $dark-gray;
+}
+
+.column-header {
+  display: grid;
+  grid-template-columns: 70% 20%;
+  padding: 10px; 
+  border-bottom: 1px solid $light-gray;
+}
+
+.column-header h3 {
+  text-align: left;
 }
 
 .column-container {
     background-color: $light-gray;
     padding: 10px;
-    // margin: 40px;
     border-radius: 15px;
-    // box-shadow: #1b1b1b;
 
     .column-details {
       display: flex;
@@ -80,17 +77,16 @@ body {
       border-radius: 8px;
       padding: 8px;
     }
+
+    .add-card-btn {
+      border-top: 1px solid $light-gray;
+    }
     
     .column-title {
       font-size: 22px;
       padding: 20px 0;
       margin-bottom: 10px solid $light-gray;
     }
-  
-    // .card-list {
-    //   list-style: none;
-    //   padding: 0;
-    // }
   }
   
 //Cards
@@ -99,12 +95,12 @@ body {
 }
 
 .card-container {
-    // margin-bottom: 10px;
-    // background-color: aqua;
-  
     .card-body {
       padding: 10px;
       margin: 15px 5px;
     }
   }
   
+  .menu-item {
+    color: $light-gray;
+  }
