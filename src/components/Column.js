@@ -54,7 +54,7 @@ export default function Column({ column }) {
             onChange={(e) => setNewColumnName(e.target.value)}
           />
           <Button onClick={() => handleRenameColumn(newColumnName)}>
-            Rename Column
+            Rename Column.
           </Button>
           <Button onClick={() => setRenameModalOpen(false)}>Cancel</Button>
         </div>
