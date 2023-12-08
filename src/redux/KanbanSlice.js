@@ -6,7 +6,7 @@ import {
     RENAME_COLUMN,
     ADD_CARD,
     MOVE_CARD,
-  } from "./components/AllActions.js";
+  } from "../components/allactions";
 
   // export const RENAME_COLUMN = "RENAME_COLUMN";
 
