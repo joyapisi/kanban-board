@@ -1,16 +1,19 @@
+// RenameColumnModal.js
 import React, { useState } from 'react';
 import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 
-const RenameColumnModal = ({ isOpen, onClose, onRenameColumn }) => {
-  const [columnName, setColumnName] = useState('');
+const RenameColumnModal = ({ isOpen, onClose, onRename }) => {
+  const [newColumnName, setNewColumnName] = useState('');
 
-  const handleRenameColumn = () => {
-    onRenameColumn(columnName);
-    setColumnName('');
-    onClose();
+  const handleRenameClick = () => {
+    if (newColumnName.trim() !== '') {
+      onRename(newColumnName);
+      setNewColumnName('');
+      onClose();
+    }
   };
 
   return (
@@ -28,18 +31,18 @@ const RenameColumnModal = ({ isOpen, onClose, onRenameColumn }) => {
         }}
       >
         <TextField
-          label="Column Name"
+          label="New Column Name"
           variant="outlined"
           fullWidth
-          value={columnName}
-          onChange={(e) => setColumnName(e.target.value)}
+          value={newColumnName}
+          onChange={(e) => setNewColumnName(e.target.value)}
         />
         <Box sx={{ mt: 2, display: 'flex', justifyContent: 'space-between' }}>
           <Button variant="contained" onClick={onClose}>
             Cancel
           </Button>
-          <Button variant="contained" color="primary" onClick={handleRenameColumn}>
-            Rename Column
+          <Button variant="contained" color="primary" onClick={handleRenameClick}>
+            Rename
           </Button>
         </Box>
       </Box>
