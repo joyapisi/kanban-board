@@ -3,7 +3,7 @@ import { DragDropContext } from "react-beautiful-dnd";
 import Column from "./Column";
 import Button from '@mui/material/Button';
 import { useDispatch, useSelector } from "react-redux";
-import { addColumn, moveCard } from "./allactions.js"
+import { addColumn, moveCard } from "./allactions"
 import AddColumnModal from "./modals/AddColumnModal.js";
 import "../styling/styles.scss"
 
