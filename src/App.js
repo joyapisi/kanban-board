@@ -1,11 +1,8 @@
-import React from "react";
-import { Provider } from "react-redux";
-import store from "./redux/store";
-import "./styling/styles.scss"; // Make sure the file name is correct
+import React from 'react';
+import { Provider } from 'react-redux';
+import store from './redux/store';
+import './styling/styles.scss'; // Make sure the file name is correct
 import KanbanBoard from './components/KanbanBoard';
-import Column from './components/Column';
-import Card from './components/Card';
-import CardInputForm from './components/CardInputForm';
 
 function App() {
   return (

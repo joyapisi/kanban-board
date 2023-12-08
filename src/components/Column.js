@@ -1,22 +1,25 @@
-//This component will hold all components and the icon which adds a column
+/* eslint-disable */
+// This component will hold all components and the icon which adds a column
 import { Droppable } from 'react-beautiful-dnd';
-import Card from './Card';
 import Button from '@mui/material/Button';
-import AddCardModal from './modals/AddCardModal';
 import { useState } from 'react';
-import { addCard, clearColumn, deleteColumn, renameColumn } from './allactions';
 import { useDispatch } from 'react-redux';
-import OptionsMenu from './OptionsMenu'; 
+import Card from './Card';
+import AddCardModal from './modals/AddCardModal';
+import {
+  addCard, clearColumn, deleteColumn, renameColumn,
+} from './allactions';
+import OptionsMenu from './OptionsMenu';
 import RenameColumnModal from './modals/RenameColumnModal.js';
 
 export default function Column({ column }) {
-  const dispatch = useDispatch();  
-  
-  //set the state of the modal popup
+  const dispatch = useDispatch();
+
+  // set the state of the modal popup
   const [isAddCardModalOpen, setAddCardModalOpen] = useState(false);
   const [isRenameModalOpen, setRenameModalOpen] = useState(false);
 
-  //handle card addition within the column
+  // handle card addition within the column
   const handleAddCard = (cardTitle) => {
     dispatch(addCard(column.id, cardTitle));
     setAddCardModalOpen(false);
@@ -41,12 +44,13 @@ export default function Column({ column }) {
 
   return (
     <div className="column">
-       <div className="column-header">
+      <div className="column-header">
         <h3>{column.title}</h3>
-        <OptionsMenu 
-          handleRename={handleRename} 
-          handleClear={handleClear} 
-          handleDelete={handleDelete}/>
+        <OptionsMenu
+          handleRename={handleRename}
+          handleClear={handleClear}
+          handleDelete={handleDelete}
+        />
       </div>
 
       <RenameColumnModal
@@ -59,11 +63,13 @@ export default function Column({ column }) {
 
       <Droppable droppableId={column.id} key={column.id}>
         {(provided) => (
-          <div 
-          className='column-details'
-          ref={provided.innerRef} {...provided.droppableProps}>
+          <div
+            className="column-details"
+            ref={provided.innerRef}
+            {...provided.droppableProps}
+          >
             {column.cards && column.cards.map((card, index) => (
-                <Card key={card.id} card={card} index={index} />
+              <Card key={card.id} card={card} index={index} />
             ))}
             {provided.placeholder}
           </div>
@@ -71,10 +77,11 @@ export default function Column({ column }) {
       </Droppable>
 
       {/* Button that will trigger the opening of the Add Card modal */}
-      <div className='add-card-btn'>
-        <Button 
-          onClick={() => setAddCardModalOpen(true)}>
-            Add Card.
+      <div className="add-card-btn">
+        <Button
+          onClick={() => setAddCardModalOpen(true)}
+        >
+          Add Card.
         </Button>
       </div>
 

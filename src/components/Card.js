@@ -1,11 +1,12 @@
-import React from "react";
-import { Draggable } from "react-beautiful-dnd";
+/* eslint-disable */
+import React from 'react';
+import { Draggable } from 'react-beautiful-dnd';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 
 export default function DraggableCard({ card, index }) {
-  return (  
+  return (
     <Draggable draggableId={card.id} index={index}>
       {(provided) => (
         <div

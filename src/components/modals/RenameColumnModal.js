@@ -1,3 +1,4 @@
+/* eslint-disable */
 // RenameColumnModal.js
 import React, { useState } from 'react';
 import Modal from '@mui/material/Modal';
