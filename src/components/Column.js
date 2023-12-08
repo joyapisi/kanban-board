@@ -7,6 +7,7 @@ import { useState } from 'react';
 import { addCard, clearColumn, deleteColumn, renameColumn } from './AllActions';
 import { useDispatch } from 'react-redux';
 import OptionsMenu from './OptionsMenu'; 
+import RenameColumnModal from './modals/RenameColumnModal.js';
 
 export default function Column({ column }) {
   const dispatch = useDispatch();  
@@ -14,7 +15,6 @@ export default function Column({ column }) {
   //set the state of the modal popup
   const [isAddCardModalOpen, setAddCardModalOpen] = useState(false);
   const [isRenameModalOpen, setRenameModalOpen] = useState(false);
-  const [newColumnName, setNewColumnName] = useState("");
 
   //handle card addition within the column
   const handleAddCard = (cardTitle) => {
@@ -26,8 +26,8 @@ export default function Column({ column }) {
     setRenameModalOpen(true);
   };
 
-  const handleRenameColumn = () => {
-    dispatch(renameColumn(column.id, newColumnName));
+  const handleRenameColumn = (newTitle) => {
+    dispatch(renameColumn(column.id, newTitle));
     setRenameModalOpen(false);
   };
 
@@ -43,22 +43,19 @@ export default function Column({ column }) {
     <div className="column">
        <div className="column-header">
         <h3>{column.title}</h3>
-        <OptionsMenu handleRename={handleRename} handleClear={handleClear} handleDelete={handleDelete}/>
+        <OptionsMenu 
+          handleRename={handleRename} 
+          handleClear={handleClear} 
+          handleDelete={handleDelete}/>
       </div>
 
-      {isRenameModalOpen && (
-        <div className="rename-modal">
-          <input
-            type="text"
-            placeholder="Enter new column name"
-            onChange={(e) => setNewColumnName(e.target.value)}
-          />
-          <Button onClick={() => handleRenameColumn(newColumnName)}>
-            Rename Column
-          </Button>
-          <Button onClick={() => setRenameModalOpen(false)}>Cancel</Button>
-        </div>
-      )}
+      <RenameColumnModal
+        isOpen={isRenameModalOpen}
+        onClose={() => setRenameModalOpen(false)}
+        onRename={(newTitle) => {
+          handleRenameColumn(newTitle);
+        }}
+      />
 
       <Droppable droppableId={column.id} key={column.id}>
         {(provided) => (

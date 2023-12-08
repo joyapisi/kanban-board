@@ -17,9 +17,7 @@ const generateUniqueId = () => {
   
 //set up initial state of column  as an empty array
 const initialState = {
-  columns: [{
-    cards: [],}
-    ],
+  columns: [],
 };
   
 //use redux reducer to set up and define state
@@ -48,7 +46,7 @@ const initialState = {
           return {
             ...state,
             columns: state.columns.map((column) =>
-              column.id === action.payload.columnId ? { ...column, cards: [] } : column
+              column.id === action.payload.ColumnId ? { ...column, cards: [] } : column
             ),
           };
     
