@@ -74,7 +74,7 @@ export default function Column({ column }) {
       <div className='add-card-btn'>
         <Button 
           onClick={() => setAddCardModalOpen(true)}>
-            Add Card
+            Add Card.
         </Button>
       </div>
 
