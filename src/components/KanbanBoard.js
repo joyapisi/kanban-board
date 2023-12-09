@@ -37,7 +37,7 @@ export default function KanbanBoard() {
     // Using react beautiful dnd for drag n drop
     <DragDropContext onDragEnd={handleDragEnd}>
       <div className="kanban-board">
-        {/* Only render columns if there are more than zer0 */}
+        {/* Only render columns if there's more than zer0 */}
         {columns.length > 0
           && columns.map((column) => (
             <Column key={column.id} column={column} />
