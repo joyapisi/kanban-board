@@ -8,7 +8,7 @@ import Card from './Card';
 import AddCardModal from './modals/AddCardModal';
 import {
   addCard, clearColumn, deleteColumn, renameColumn,
-} from './allactions';
+} from './Doings.js';
 import OptionsMenu from './OptionsMenu';
 import RenameColumnModal from './modals/RenameColumnModal.js';
 
