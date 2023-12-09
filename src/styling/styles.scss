@@ -20,6 +20,13 @@ body {
 .main-heading {
   text-decoration: none;
 }
+
+.nav-link {
+    text-decoration: none;
+    color: inherit;
+    padding: 0;
+  }
+
 //main board
 .main-board {
   display: flex;
@@ -61,16 +68,18 @@ body {
   width: 100%;
   max-width: 100%;
   flex: 1;
-  margin: 8px;
+  // margin: 8px;
   gap: 5px;
   background-color: $gray;
 }
 
 .column-header {
-  display: grid;
-  grid-template-columns: 70% 30%;
-  padding: 15px; 
-  border-bottom: 1px solid $light-gray;
+  display: flex;
+  align-content: flex-start;
+  justify-content: space-between;
+  padding: 15px;
+  border-bottom: 1px solid #909090;
+  align-items: center;
 }
 
 .column-header h3 {
@@ -126,12 +135,12 @@ body {
   @media (min-width: 768px) {
     .main-board {
       display: flex;
-      padding: 40px;
+      padding: 20px;
     }
     .kanban-board {
       flex-direction: row;
       align-items: flex-start; 
-      gap: 20px;
+      gap: 10px;
     }
     .column {
       max-width: 20%;
@@ -140,10 +149,10 @@ body {
 
   @media (min-width: 992px) {
     .main-board {
-      padding: 60px;
+      padding: 30px;
     }
     .kanban-board {
-      gap: 30px;
+      gap: 10px;
     }
     .column {
       max-width: 20%;
