@@ -3,6 +3,8 @@ import { Provider } from 'react-redux';
 import store from './redux/store';
 import './styling/styles.scss'; // Make sure the file name is correct
 import KanbanBoard from './components/KanbanBoard';
+import { BrowserRouter, Link, Route, Router } from 'react-router-dom';
+import { Switch } from '@mui/base';
 
 function App() {
   return (
