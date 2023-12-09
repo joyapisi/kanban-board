@@ -78,7 +78,7 @@ export default function Column({ column }) {
 
       {/* Button that will trigger the opening of the Add Card modal */}
       <div className="add-card-btn">
-        <Button
+        <Button className='add-card-btn'
           onClick={() => setAddCardModalOpen(true)}
         >
           Add Card

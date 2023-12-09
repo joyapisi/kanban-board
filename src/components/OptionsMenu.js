@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import IconButton from '@mui/material/Button';
+// import IconButton from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
@@ -17,16 +17,13 @@ export default function OptionsMenu({ handleRename, handleClear, handleDelete })
   };
 
   return (
-    <div>
-      <IconButton
+    <div className='options-menu'>
+        <MoreHorizIcon 
         id="options-menu"
         aria-controls={open ? 'options-menu' : undefined}
         aria-haspopup="true"
         aria-expanded={open ? 'true' : undefined}
-        onClick={handleClick}
-      >
-        <MoreHorizIcon />
-      </IconButton>
+        onClick={handleClick}/>
       <Menu
         id="options-menu"
         anchorEl={anchorEl}

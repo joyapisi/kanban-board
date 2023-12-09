@@ -3,25 +3,34 @@
 
 $black: #1b1b1b;
 $white: #fff;
-$light-gray: #cdcfcf;
+$light-gray: #909090;
+$gray: #3b3b3b;
 $dark-gray: rgb(41, 41, 41);
 
 * {
-  color: $black;
+  color: $white;
 }
 
 body {
+  background-color: $dark-gray;
   // background-color: #1b2845;
   // background-image: linear-gradient(95deg, #040404 0%, #274060 74%);
 }
 
+.main-heading {
+  text-decoration: none;
+}
 //main board
 .main-board {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 30px;
-  padding: 30px; 
+  padding: 30px;
+}
+
+.nav {
+  display: flex;
 }
 
 .main-heading {
@@ -31,7 +40,9 @@ body {
 // KanBan Board
 .kanban-board {
     display: flex;
-    align-items: flex-start;   
+    flex-direction: column;
+    align-items: flex-start;
+    flex-wrap: wrap; 
     width: 100%;
     height: 100%;
     gap: 10px;
@@ -45,19 +56,20 @@ body {
 .column {
   text-align: center;
   border: 1px solid #cccccc;
+  border-radius: 2px;
   // padding: 10px 5px;
   width: 100%;
-  max-width: 20%;
+  max-width: 100%;
   flex: 1;
   margin: 8px;
   gap: 5px;
-  // background-color: $dark-gray;
+  background-color: $gray;
 }
 
 .column-header {
   display: grid;
-  grid-template-columns: 70% 20%;
-  padding: 10px; 
+  grid-template-columns: 70% 30%;
+  padding: 15px; 
   border-bottom: 1px solid $light-gray;
 }
 
@@ -65,30 +77,30 @@ body {
   text-align: left;
 }
 
-.column-container {
-    background-color: $light-gray;
-    padding: 10px;
-    border-radius: 15px;
+.column-title {
+  font-size: 22px;
+  padding: 20px 0;
+  margin-bottom: 10px solid $light-gray;
+}
 
-    .column-details {
-      display: flex;
-      flex-direction: column;
-      min-height: 100px; 
-      border-radius: 8px;
-      padding: 8px;
-    }
+.column-details {
+  display: flex;
+  flex-direction: column;
+  min-height: 5px; 
+  border-radius: 8px;
+  padding: 8px;
+  color: $black;
+}
 
-    .add-card-btn {
-      border-top: 1px solid $light-gray;
-    }
-    
-    .column-title {
-      font-size: 22px;
-      padding: 20px 0;
-      margin-bottom: 10px solid $light-gray;
-    }
-  }
-  
+.add-card-btn {
+  border-top: 1px solid $light-gray;
+}
+
+.options-menu {
+  align-self: right;
+  padding: 0;
+}
+
 //Cards
 .card {
   padding-bottom: 5px;
@@ -98,9 +110,42 @@ body {
     .card-body {
       padding: 10px;
       margin: 15px 5px;
+      background-color: $dark-gray;
     }
   }
   
+  .add-card-btn {
+    border-top: 1px solid $light-gray;
+    padding: 5px 0;
+  }
+
   .menu-item {
     color: $light-gray;
+  }
+
+  @media (min-width: 768px) {
+    .main-board {
+      display: flex;
+      padding: 40px;
+    }
+    .kanban-board {
+      flex-direction: row;
+      align-items: flex-start; 
+      gap: 20px;
+    }
+    .column {
+      max-width: 20%;
+    }
+  }
+
+  @media (min-width: 992px) {
+    .main-board {
+      padding: 60px;
+    }
+    .kanban-board {
+      gap: 30px;
+    }
+    .column {
+      max-width: 20%;
+    }
   }
