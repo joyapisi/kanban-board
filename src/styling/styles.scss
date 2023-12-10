@@ -17,15 +17,19 @@ body {
   // background-image: linear-gradient(95deg, #040404 0%, #274060 74%);
 }
 
+#menu-item {
+  color: $black;
+}
+
 .main-heading {
   text-decoration: none;
 }
 
 .nav-link {
-    text-decoration: none;
-    color: inherit;
-    padding: 0;
-  }
+  text-decoration: none;
+  color: inherit;
+  padding: 0;
+}
 
 //main board
 .main-board {
@@ -42,22 +46,32 @@ body {
 
 .main-heading {
   align-self: center;
+  animation: slide-in 1000ms;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
 }
 
 // KanBan Board
 .kanban-board {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    flex-wrap: wrap; 
-    width: 100%;
-    height: 100%;
-    gap: 10px;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+  gap: 10px;
+}
   
-  .add-column-button {
-    margin-top: 20px;
-  }
+.add-column-button {
+  margin-top: 20px;
+}
 
 //Columns
 .column {
@@ -145,6 +159,12 @@ body {
     .column {
       max-width: 20%;
     }
+    //modal
+    #modal {
+      width: 60%;
+      max-width: 600px;
+      height: auto;
+    }
   }
 
   @media (min-width: 992px) {
@@ -158,3 +178,12 @@ body {
       max-width: 20%;
     }
   }
+  
+  @media only screen and (max-width: 767px) {
+    #modal {
+      width: 90%;
+      max-width: none;
+      height: 120%;
+    }
+  }
+  

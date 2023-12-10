@@ -45,7 +45,7 @@ export default function Column({ column }) {
   return (
     <div className="column">
       <div className="column-header">
-        <h3>{column.title}</h3>
+        <h4>{column.title}</h4>
         <OptionsMenu
           handleRename={handleRename}
           handleClear={handleClear}

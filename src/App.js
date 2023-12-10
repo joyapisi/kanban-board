@@ -4,7 +4,6 @@ import store from './redux/store';
 import './styling/styles.scss';
 import KanbanBoard from './components/KanbanBoard';
 import { BrowserRouter as Router, Link, Routes, Route } from 'react-router-dom';
-import Button from '@mui/material/Button';
 
 function Heading() {
   return (
@@ -18,7 +17,11 @@ function Dashboard() {
   return (
     <div className="main-board">
       <Heading />
-      <Link to="/kanban"> Kanban </Link>
+      <Link 
+        className="nav-link" 
+        to="/kanban"> 
+        Kanban 
+      </Link>
     </div>
   );
 }
@@ -31,10 +34,11 @@ function App() {
           <Route path="/kanban" element={
             <div className="main-board">
               <Heading />
-              <div className='nav'>
-                Kanban&gt; 
-                <Link to="/">
-                  <span>Dashboard</span>
+              <div className='nav'> 
+                <Link
+                  className="nav-link"  
+                  to="/">
+                  <span>Kanban&gt;Dashboard</span>
                 </Link>
               </div>
               <KanbanBoard />
