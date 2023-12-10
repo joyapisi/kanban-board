@@ -4,7 +4,6 @@ import store from './redux/store';
 import './styling/styles.scss';
 import KanbanBoard from './components/KanbanBoard';
 import { BrowserRouter as Router, Link, Routes, Route } from 'react-router-dom';
-import Button from '@mui/material/Button';
 
 function Heading() {
   return (
