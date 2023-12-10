@@ -18,7 +18,7 @@ const RenameColumnModal = ({ isOpen, onClose, onRename }) => {
   };
 
   return (
-    <Modal open={isOpen} onClose={onClose}>
+    <Modal id="modal" open={isOpen} onClose={onClose}>
       <Box
         sx={{
           position: 'absolute',
