@@ -159,12 +159,6 @@ body {
     .column {
       max-width: 20%;
     }
-    //modal
-    #modal {
-      width: 60%;
-      max-width: 600px;
-      height: auto;
-    }
   }
 
   @media (min-width: 992px) {
@@ -178,12 +172,3 @@ body {
       max-width: 20%;
     }
   }
-  
-  @media only screen and (max-width: 767px) {
-    #modal {
-      width: 90%;
-      max-width: none;
-      height: 120%;
-    }
-  }
-  
