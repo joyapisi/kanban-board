@@ -24,7 +24,7 @@
 
 # 📖 Kanban Board <a name="about-project"></a>
 
-This is a KANBAN BOARD which helps users organizee their tasks in a visual manner. Users can add columns with main task titles. Users can also drag and drop tasks from one column to another. This project uses React, Redux, material UI/Bootstrap, and React Beautiful DND.
+This is a KANBAN BOARD which helps users visually organize their tasks. Users can add columns with main task titles. Users can also drag and drop tasks from one column to another. This project uses React, Redux, Material UI/Bootstrap, and React Beautiful DND.
 
 ### 📃 Tech Stack <a name="tech-stack"></a>
 #### This project has been built with:
@@ -78,9 +78,7 @@ Clone this repository to your desired folder:
 Use git clone command or download the ZIP folder
 
 ### 🚀 Deployment
-
-Not yet deployed ...
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="https://joys-kanban-board.netlify.app/">back to top</a>)</p>
 
 ## 👩🏾‍💻 Author <a name="authors"></a>
 
@@ -92,18 +90,18 @@ Not yet deployed ...
 <!-- FUTURE FEATURES -->
 
 ## 🔭 Future Features <a name="future-features"></a><br/>
-- [ ] **Adding a databases for consistent storage**<br/>
+- [ ] **Adding a GraphQL database for consistent storage**<br/>
 - [ ] **Add more functional features**
 - [ ] **Add more aesthetic features**
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🎆 Show your support <a name="support"></a>
-If you like this project please follow me on github and also connect on Linkedin.
+If you like this project please follow me on Git Hub and also connect on Linkedin.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <!-- ACKNOWLEDGEMENTS -->
 
 ## 🙏🏾 Acknowledgments <a name="acknowledgements"></a>
-- I would like to thank Safaricom PLC for assigninng me this exercise. <br>
+- I would like to thank Safaricom PLC for assigning me this exercise. <br>
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
