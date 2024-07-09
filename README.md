@@ -13,7 +13,7 @@
   - [💻 Getting Started ](#-getting-started-)
     - [Prerequisites](#prerequisites)
     - [Setup](#setup)
-  - [🚀 Deployment](#deployment)
+  - [:🚀 Deployment](#deployment)
   - [:busts\_in\_silhouette: Authors ](#busts_in_silhouette-authors-)
   - [:telescope: Future Features ](#telescope-future-features-)
   - [:pray: Acknowledgments ](#pray-acknowledgments-)
