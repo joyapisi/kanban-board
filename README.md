@@ -43,7 +43,7 @@ This is a KANBAN BOARD which helps users visually organize their tasks. Users ca
 
 - **React components**
 - **Drag and Drop**
-- **Add, edit and delete**
+- **Add, edit, and delete**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -78,7 +78,7 @@ Clone this repository to your desired folder:
 Use git clone command or download the ZIP folder
 
 ### 🚀 Deployment
-<p align="right">(<a href="https://joys-kanban-board.netlify.app/">back to top</a>)</p>
+[View Deployed Project Here](https://joys-kanban-board.netlify.app/)
 
 ## 👩🏾‍💻 Author <a name="authors"></a>
 
