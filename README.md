@@ -13,7 +13,7 @@
   - [💻 Getting Started ](#-getting-started-)
     - [Prerequisites](#prerequisites)
     - [Setup](#setup)
-    - [Deployment](#deployment)
+  - [🚀 Deployment](#deployment)
   - [:busts\_in\_silhouette: Authors ](#busts_in_silhouette-authors-)
   - [:telescope: Future Features ](#telescope-future-features-)
   - [:pray: Acknowledgments ](#pray-acknowledgments-)
@@ -63,7 +63,7 @@ To get a local copy up and running, follow these steps.
 
 ### Prerequisites
 
-In order to run this project you need:
+To run this project you need:
 - React
 - Redux
 - Material UI
@@ -77,7 +77,7 @@ In order to run this project you need:
 Clone this repository to your desired folder:
 Use git clone command or download the ZIP folder
 
-### 🚀 Deployment
+## 🚀 Deployment
 [View Deployed Project Here](https://joys-kanban-board.netlify.app/)
 
 ## 👩🏾‍💻 Author <a name="authors"></a>
